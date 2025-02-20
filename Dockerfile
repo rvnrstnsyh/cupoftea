@@ -3,7 +3,7 @@ FROM denoland/deno:2.2.0
 ARG GIT_REVISION
 ENV DENO_DEPLOYMENT_ID=${GIT_REVISION}
 
-WORKDIR /.nvll
+WORKDIR /.cupoftea-nvll
 
 COPY . .
 RUN deno cache src/main.ts

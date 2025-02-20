@@ -14,7 +14,7 @@ export default defineApp((_request: Request, ctx: RouteContext<void, State>): JS
 				{ctx.state.context.useDarkNet && <meta http-equiv='onion-location' content={onionLocation} />}
 				<link rel='icon' href={asset('/ico/favicon.ico')} type='image/x-icon' />
 				<link rel='stylesheet' href={asset('/css/index.css')} />
-				<title>Developer Insights | NVLL</title>
+				<title>Cup of Tea | NVLL</title>
 			</head>
 			<body>
 				<ctx.Component />
