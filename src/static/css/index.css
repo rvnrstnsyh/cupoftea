@@ -28,9 +28,11 @@
 /**?
   *? ----- LIST OF CONTENTS -----
   *! GLOBAL SECTION -----
+  *! LAYOUT SECTION -----
   *! NAVIGATION SECTION -----
-  *! HOME SECTION -----
-  *! HOME SECTION -----
+  *! ABOUT PAGE SECTION -----
+  *! PROFILE PAGE SECTION -----
+  *! POST PAGE SECTION -----
   */
 
 /**!
@@ -205,9 +207,12 @@ body {
   border
   border-transparent
   bg-gray-800
-  px-4
-  py-2
-  text-xs
+  px-3
+  py-1
+  sm:px-4
+  sm:py-2
+  text-[10px]
+  sm:text-xs
   font-semibold
   uppercase
   tracking-widest
@@ -215,7 +220,7 @@ body {
   transition
   duration-150
   ease-in-out
-  hover:bg-gray-700
+  hover:text-[#9acd32]
   focus:bg-gray-700
   focus:outline-none
   focus:ring-2
@@ -225,6 +230,92 @@ body {
 }
 /**!
   *! END GLOBAL SECTION -----
+  */
+/**!
+  *! LAYOUT SECTION -----
+  */
+main.main-layout {
+  @apply flex
+  items-center
+  justify-center
+  min-h-screen
+  bg-gray-100;
+}
+main.main-layout .overlay {
+  @apply fixed
+  bg-[url('../png/background.png')]
+  bg-no-repeat
+  bg-cover
+  z-10
+  w-full
+  max-w-lg
+  -translate-x-[20%]
+  -translate-y-[30%]
+  md:max-w-[877px]
+  md:translate-y-0
+  transition-transform
+  duration-300
+  inset-0;
+}
+main.main-layout section.container {
+  @apply max-w-screen-sm
+  mx-auto;
+}
+main.main-layout section.container .children {
+  @apply z-20
+  relative
+  flex
+  items-center
+  justify-center
+  overflow-hidden
+  bg-white
+  p-6
+  my-4
+  mx-auto
+  shadow-md
+  sm:rounded-lg
+  transition-all
+  duration-300;
+}
+main.main-layout section.container .children .back-button {
+  @apply flex
+  items-center
+  justify-between
+  pb-[44px];
+}
+main.main-layout section.container .children .back-button a.anchor-1 {
+  @apply anchor-text
+  flex
+  items-center
+  justify-center
+  gap-1
+  text-sm mt-1;
+}
+main.main-layout section.container .children .back-button a.anchor-1 img {
+  @apply inline-block
+  w-5
+  h-5
+  opacity-50;
+}
+main.main-layout section.container .children .back-button a.anchor-2 h3 {
+  @apply font-bold;
+}
+main.main-layout section.container .children .cupoftea-logo .wrapper {
+  @apply inline-block
+  ml-0.5
+  bg-yellow-green
+  rounded-full
+  relative;
+}
+main.main-layout section.container .children .cupoftea-logo .wrapper .dot {
+  @apply block
+  bg-yellow-green
+  opacity-70
+  rounded-full
+  animate-sonar;
+}
+/**!
+  *! END LAYOUT SECTION -----
   */
 /**!
   *! NAVIGATION SECTION -----
@@ -265,121 +356,79 @@ nav.navigation .wrapper ul li a {
   *! END NAVIGATION SECTION -----
   */
 /**!
-  *! HOME SECTION -----
+  *! ABOUT PAGE SECTION -----
   */
-main.home-layout {
-  @apply flex
-  items-center
-  justify-center
-  min-h-screen
-  bg-gray-100;
+main.main-layout section.container .children .about-page .content {
+  @apply mt-4;
 }
-main.home-layout .overlay {
-  @apply fixed
-  bg-[url('../png/background.png')]
-  bg-no-repeat
-  bg-cover
-  z-10
-  w-full
-  max-w-lg
-  -translate-x-[20%]
-  -translate-y-[30%]
-  md:max-w-[877px]
-  md:translate-y-0
-  transition-transform
-  duration-300
-  inset-0;
+main.main-layout section.container .children .about-page .content h5 {
+  @apply font-bold;
 }
-main.home-layout section.home {
-  @apply max-w-screen-sm
-  mx-auto;
+main.main-layout section.container .children .about-page .content p.description {
+  @apply mt-2
+  text-sm
+  leading-normal
+  text-justify;
 }
-main.home-layout section.home .children {
-  @apply z-20
-  relative
-  flex
-  items-center
-  justify-center
-  overflow-hidden
-  bg-white
-  p-6
-  my-4
-  mx-auto
-  shadow-md
-  sm:rounded-lg
-  transition-all
-  duration-300;
-}
-main.home-layout section.home .children .cupoftea-logo .wrapper {
-  @apply inline-block
-  ml-0.5
-  bg-yellow-green
-  rounded-full
-  relative;
-}
-main.home-layout section.home .children .cupoftea-logo .wrapper .dot {
-  @apply block
-  bg-yellow-green
-  opacity-70
-  rounded-full
-  animate-sonar;
-}
-main.home-layout section.home .children .back-button {
+main.main-layout section.container .children .about-page .content .cta {
   @apply flex
   items-center
   justify-between
-  pb-[44px];
+  mt-4;
 }
-main.home-layout section.home .children .back-button a.anchor-1 {
-  @apply anchor-text
-  flex
-  items-center
-  justify-center
-  gap-1
-  text-sm mt-1;
+main.main-layout section.container .children .about-page .content .cta .maintainer {
+  @apply text-sm
+  text-gray-400;
 }
-main.home-layout section.home .children .back-button a.anchor-1 img {
-  @apply inline-block
-  w-5
-  h-5
-  opacity-50;
+main.main-layout section.container .children .about-page .content .cta .button-wrapper {
+  @apply flex
+  gap-2;
 }
-main.home-layout section.home .children .back-button a.anchor-2 h3 {
-  @apply font-bold;
-}
-main.home-layout section.home .children .post-lists .profile {
+/**!
+  *! END ABOUT PAGE SECTION -----
+  */
+/**!
+  *! PROFILE PAGE SECTION -----
+  */
+main.main-layout section.container .children .profile-page .details {
   @apply px-0.5
   mt-2
   text-gray-400;
 }
-main.home-layout section.home .children .post-lists .profile h5 {
+main.main-layout section.container .children .profile-page .details h5 {
   @apply font-bold;
 }
-main.home-layout section.home .children .post-lists .profile p.details {
+main.main-layout section.container .children .profile-page .details p.statboard {
   @apply text-sm
   leading-normal;
 }
-main.home-layout section.home .children .post-lists .post-card {
+main.main-layout section.container .children .profile-page .post-card {
   @apply mt-8
   py-8;
 }
-main.home-layout section.home .children .post-lists .post-card .title {
+main.main-layout section.container .children .profile-page .post-card .title {
   @apply anchor-text
   sm:col-span-2;
 }
-main.home-layout section.home .children .post-lists .post-card time {
+main.main-layout section.container .children .profile-page .post-card time {
   @apply text-gray-400;
 }
-main.home-layout section.home .children .post-lists .post-card .snippet {
+main.main-layout section.container .children .profile-page .post-card .snippet {
   @apply paragraph
   mt-2;
 }
-main.home-layout section.home .children .post-page .author-date {
+/**!
+  *! END PROFILE PAGE SECTION -----
+  */
+/**!
+  *! POST PAGE SECTION -----
+  */
+main.main-layout section.container .children .post-page .author-date {
   @apply text-gray-400;
 }
-main.home-layout section.home .children .post-page .markdown-body {
+main.main-layout section.container .children .post-page .markdown-body {
   @apply mt-8;
 }
 /**!
-  *! END HOME SECTION -----
+  *! END POST PAGE SECTION -----
   */

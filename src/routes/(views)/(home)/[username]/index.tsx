@@ -10,14 +10,14 @@ export default defineRoute(async (_request: Request, _ctx: RouteContext<void, un
 	const posts: Post[] = await findPosts()
 
 	return (
-		<section className='post-lists'>
-			<BackButton title='Home' href='/' />
+		<section className='profile-page'>
+			<BackButton title='About' href='/' />
 			<CupOfTeaLogo />
-			<div className='profile'>
+			<div className='details'>
 				<h5>
 					<a className='anchor-text' href='https://nvll.me'>rvnrstnsyh</a> as Administrator
 				</h5>
-				<p className='details'>
+				<p className='statboard'>
 					Member since February 14, 2025<br />
 					1 Spilled &bull; 0 Echo
 				</p>
