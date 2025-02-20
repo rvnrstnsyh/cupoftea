@@ -1,13 +1,13 @@
 // deno-lint-ignore-file react-no-danger
 
-import BackButton from '../(_components)/back-button.tsx'
-import PublishedAt from '../(_components)/published-at.tsx'
+import BackButton from '../../(_components)/back-button.tsx'
+import PublishedAt from '../../(_components)/published-at.tsx'
 
 import { Head } from '$fresh/runtime.ts'
 import { JSX } from 'preact/jsx-runtime'
-import { findPost } from '../../../../helpers/lib/posts.ts'
 import { defineRoute, RouteContext } from '$fresh/server.ts'
 import { CSS, KATEX_CSS, render, RenderOptions } from '$gfm'
+import { findPost } from '../../../../../helpers/lib/posts.ts'
 
 export default defineRoute(async (_request: Request, ctx: RouteContext<void, unknown>): Promise<JSX.Element | Response> => {
 	const post: Post | null = await findPost(ctx.params.slug)
@@ -23,7 +23,7 @@ export default defineRoute(async (_request: Request, ctx: RouteContext<void, unk
 				<style dangerouslySetInnerHTML={{ __html: CSS + KATEX_CSS }} />
 			</Head>
 			<section className='post-page'>
-				<BackButton title='Back' href='/' />
+				<BackButton title='Back' href='/rvnrstnsyh' />
 				<article>
 					<h1>{post.title}</h1>
 					<div className='author-date'>

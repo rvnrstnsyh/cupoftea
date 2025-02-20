@@ -91,6 +91,7 @@ Reference link: [Example Reference][1]
 
 ![Placeholder Image](/svg/deno-1.svg)
 ![Placeholder Image](/svg/deno-2.svg)
+![Placeholder Image](/svg/deno-3.svg)
 
 ## Tables
 
