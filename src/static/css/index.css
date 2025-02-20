@@ -1,0 +1,385 @@
+/*
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+
+/*
+  * This injects Tailwind's component classes and any component classes
+  * registered by plugins.
+  */
+@tailwind components;
+
+/*
+  * This injects Tailwind's utility classes and any utility classes registered
+  * by plugins.
+  */
+@tailwind utilities;
+
+/*
+  * Use this directive to control where Tailwind injects the hover, focus,
+  * responsive, dark mode, and other variants of each class.
+  *
+  * If omitted, Tailwind will append these classes to the very end of
+  * your stylesheet by default.
+  */
+@tailwind variants;
+
+/**?
+  *? ----- LIST OF CONTENTS -----
+  *! GLOBAL SECTION -----
+  *! NAVIGATION SECTION -----
+  *! HOME SECTION -----
+  *! HOME SECTION -----
+  */
+
+/**!
+  *! GLOBAL SECTION -----
+  /** * Breakpoints
+    *   => @media (max-width: 375px) { ... }  2xs - M
+    *   => @media (max-width: 480px) { ... }   xs - M
+    *   => @media (max-width: 640px) { ... }   sm - M
+    *   => @media (max-width: 768px) { ... }   md - T
+    *   => @media (max-width: 1024px) { ... }  lg - T
+    *   => @media (max-width: 1280px) { ... }  xl - D
+    *   => @media (max-width: 1536px) { ... } 2xl - D
+    */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+/* CSS variables for reusablity across all files (including above imported) */
+:root {
+  --primary-color: #1f2937;
+  --secondary-color: #2a307f;
+  --tertiary-color: #1c274c;
+  --quaternary-color: #363755;
+  --white-color: #ffffff;
+  --gray-color: #f1f1f1;
+  --creamson-color: #fff0de;
+  --dim-color: #f9f9f9;
+  --dim-red-color: #8b0000;
+  --dim-white-color: #ffffffb3;
+  --black-200: #020202;
+  --black-300: #333333;
+  --black-400: #1f1e31;
+  --black-500: #555555;
+  --gray-100: #888888;
+
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::-moz-selection {
+  color: var(--dim-white-color);
+  background: var(--primary-color);
+}
+::selection {
+  color: var(--dim-white-color);
+  background: var(--primary-color);
+}
+input::placeholder {
+  color: #ced0d5;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body,
+html {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -ms-overflow-style: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  user-select: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+*:focus {
+  outline: none !important;
+}
+body {
+  margin: 0 auto;
+}
+@layer base {
+  h1 {
+    @apply text-4xl
+    md:text-5xl
+    font-bold
+    tracking-tight;
+  }
+  h2 {
+    @apply text-3xl
+    md:text-4xl
+    font-semibold
+    tracking-tight;
+  }
+  h3 {
+    @apply text-2xl
+    md:text-3xl
+    font-semibold
+    tracking-tight;
+  }
+  h4 {
+    @apply text-xl
+    md:text-2xl
+    font-semibold;
+  }
+  h5 {
+    @apply text-lg
+    md:text-xl
+    font-medium;
+  }
+  h6 {
+    @apply text-base
+    md:text-lg
+    font-medium;
+  }
+}
+.anchor-text {
+  @apply text-gray-600
+  underline
+  hover:no-underline;
+}
+.paragraph,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body table tr,
+.markdown-body table td,
+.markdown-body table th,
+.markdown-body li,
+.markdown-body dd,
+.markdown-body dt,
+.markdown-body blockquote,
+.markdown-body figcaption,
+.markdown-body span,
+.markdown-body em,
+.markdown-body i,
+.markdown-body strong,
+.markdown-body b,
+.markdown-body u,
+.markdown-body s,
+.markdown-body del,
+.markdown-body mark,
+.markdown-body code,
+.markdown-body abbr,
+.markdown-body cite,
+.markdown-body q,
+.markdown-body sub,
+.markdown-body sup,
+.markdown-body kbd,
+.markdown-body var {
+  @apply text-justify
+  text-sm
+  leading-relaxed;
+}
+.markdown-body a {
+  color: #4b5563 !important;
+  text-decoration: underline !important;
+}
+.markdown-body a:hover {
+  text-decoration: none !important;
+}
+.primary-button {
+  @apply inline-flex
+  items-center
+  rounded-md
+  border
+  border-transparent
+  bg-gray-800
+  px-4
+  py-2
+  text-xs
+  font-semibold
+  uppercase
+  tracking-widest
+  text-white
+  transition
+  duration-150
+  ease-in-out
+  hover:bg-gray-700
+  focus:bg-gray-700
+  focus:outline-none
+  focus:ring-2
+  focus:ring-gray-500
+  focus:ring-offset-2
+  active:bg-gray-900;
+}
+/**!
+  *! END GLOBAL SECTION -----
+  */
+/**!
+  *! NAVIGATION SECTION -----
+  */
+nav.navigation {
+  @apply mx-auto
+  px-1.5
+  max-w-full;
+}
+nav.navigation .wrapper {
+  @apply flex
+  flex-wrap
+  items-start
+  justify-between
+  gap-2;
+}
+nav.navigation .wrapper .copyright {
+  @apply text-xs
+  text-gray-600;
+}
+nav.navigation .wrapper ul {
+  @apply z-20
+  flex
+  flex-wrap
+  items-center;
+}
+nav.navigation .wrapper ul li {
+  @apply relative
+  inline-block
+  pe-2
+  text-xs;
+}
+nav.navigation .wrapper ul li a {
+  @apply anchor-text
+  text-xs;
+}
+/**!
+  *! END NAVIGATION SECTION -----
+  */
+/**!
+  *! HOME SECTION -----
+  */
+main.home-layout {
+  @apply flex
+  items-center
+  justify-center
+  min-h-screen
+  bg-gray-100;
+}
+main.home-layout .overlay {
+  @apply fixed
+  bg-[url('../png/background.png')]
+  bg-no-repeat
+  bg-cover
+  z-10
+  w-full
+  max-w-lg
+  -translate-x-[20%]
+  -translate-y-[30%]
+  md:max-w-[877px]
+  md:translate-y-0
+  transition-transform
+  duration-300
+  inset-0;
+}
+main.home-layout section.home {
+  @apply max-w-screen-sm
+  mx-auto;
+}
+main.home-layout section.home .children {
+  @apply z-20
+  relative
+  flex
+  items-center
+  justify-center
+  overflow-hidden
+  bg-white
+  p-6
+  my-4
+  mx-auto
+  shadow-md
+  sm:rounded-lg
+  transition-all
+  duration-300;
+}
+main.home-layout section.home .children .cupoftea-logo .wrapper {
+  @apply inline-block
+  ml-0.5
+  bg-yellow-green
+  rounded-full
+  relative;
+}
+main.home-layout section.home .children .cupoftea-logo .wrapper .dot {
+  @apply block
+  bg-yellow-green
+  opacity-70
+  rounded-full
+  animate-sonar;
+}
+main.home-layout section.home .children .back-button {
+  @apply flex
+  items-center
+  justify-between
+  pb-[44px];
+}
+main.home-layout section.home .children .back-button a.anchor-1 {
+  @apply anchor-text
+  flex
+  items-center
+  justify-center
+  gap-1
+  text-sm mt-1;
+}
+main.home-layout section.home .children .back-button a.anchor-1 img {
+  @apply inline-block
+  w-5
+  h-5
+  opacity-50;
+}
+main.home-layout section.home .children .back-button a.anchor-2 h3 {
+  @apply font-bold;
+}
+main.home-layout section.home .children .post-lists .profile {
+  @apply px-0.5
+  mt-2
+  text-gray-400;
+}
+main.home-layout section.home .children .post-lists .profile h5 {
+  @apply font-bold;
+}
+main.home-layout section.home .children .post-lists .profile p.details {
+  @apply text-sm
+  leading-normal;
+}
+main.home-layout section.home .children .post-lists .post-card {
+  @apply mt-8
+  py-8;
+}
+main.home-layout section.home .children .post-lists .post-card .title {
+  @apply anchor-text
+  sm:col-span-2;
+}
+main.home-layout section.home .children .post-lists .post-card time {
+  @apply text-gray-400;
+}
+main.home-layout section.home .children .post-lists .post-card .snippet {
+  @apply paragraph
+  mt-2;
+}
+main.home-layout section.home .children .post-page .author-date {
+  @apply text-gray-400;
+}
+main.home-layout section.home .children .post-page .markdown-body {
+  @apply mt-8;
+}
+/**!
+  *! END HOME SECTION -----
+  */
