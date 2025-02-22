@@ -12,7 +12,7 @@ export default function BackButton({ title, href }: BackButtonProps): JSX.Elemen
 				<img src={asset('/png/arrow-left.png')} alt='Arrow Left' />
 				{title}
 			</a>
-			{title !== 'Home' && (
+			{title !== 'About' && (
 				<a href={href} className='anchor-2'>
 					<CupOfTeaLogo small />
 				</a>
